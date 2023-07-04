@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/editAssessmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".controller.AssessmentDetailViewController">
+
+        <TextView
+            android:id="@+id/textViewEditAssessment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/edit_assessment"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextEditAssessmentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="@string/assessment_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/textViewEditAssessment"
+            app:layout_constraintStart_toStartOf="@+id/textViewEditAssessment"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEditAssessment" />
+
+        <Button
+            android:id="@+id/buttonEditAssessmentStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="onEditAssessmentStartDate"
+
+            android:text="@string/select_start_date"
+            app:layout_constraintStart_toStartOf="@+id/editTextEditAssessmentName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEditAssessmentName" />
+
+        <Button
+            android:id="@+id/buttonEditAssessmentEndDate"
+            android:layout_width="187dp"
+            android:layout_height="48dp"
+            android:onClick="onEditAssessmentEndDate"
+            android:text="@string/select_end_date"
+            app:layout_constraintStart_toStartOf="@+id/checkBoxEditAssessmentStartDateAlert"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxEditAssessmentStartDateAlert" />
+
+        <TextView
+            android:id="@+id/textViewEditAssessmentStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/start_date"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/buttonEditAssessmentStartDate"
+            app:layout_constraintTop_toBottomOf="@+id/buttonEditAssessmentStartDate" />
+
+        <TextView
+            android:id="@+id/textViewEditAssessmentEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/end_date"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/buttonEditAssessmentEndDate"
+            app:layout_constraintTop_toBottomOf="@+id/buttonEditAssessmentEndDate" />
+
+        <Button
+            android:id="@+id/buttonSaveAssessment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="onSaveAssessment"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/buttonEditAssessmentEndDate"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEditAssessmentType" />
+
+        <CalendarView
+            android:id="@+id/calendarViewEditAssessment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupAssessmentType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="24dp"
+            android:gravity="center"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonSaveAssessment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewEditAssessmentStartDate"
+            app:layout_constraintTop_toTopOf="@+id/textViewEditAssessment">
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/performanceRB"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:text="@string/performance"
+                android:textAlignment="center" />
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/objectiveRB"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:text="@string/objective"
+                android:textAlignment="center" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textViewEditAssessmentType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/assessment_type"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxEditAssessmentEndDateAlert"
+            tools:layout_editor_absoluteX="24dp" />
+
+        <CheckBox
+            android:id="@+id/checkBoxEditAssessmentStartDateAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_alert"
+            app:layout_constraintStart_toStartOf="@+id/textViewEditAssessmentStartDate"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEditAssessmentStartDate" />
+
+        <CheckBox
+            android:id="@+id/checkBoxEditAssessmentEndDateAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_alert"
+            app:layout_constraintStart_toStartOf="@+id/textViewEditAssessmentEndDate"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEditAssessmentEndDate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

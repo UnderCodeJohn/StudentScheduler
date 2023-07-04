@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/assessmentListContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".controller.AssessmentListController">
+
+    <TextView
+        android:id="@+id/assessmentListNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/assessment_name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/assessmentListStartDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/start_date"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/assessmentListNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/assessmentListNameTextView" />
+
+    <TextView
+        android:id="@+id/assessmentListEndDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/end_date"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/assessmentListStartDateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/assessmentListStartDateTextView" />
+
+    <Button
+        android:id="@+id/noteListDeleteButton"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/baseline_delete_24"
+        android:backgroundTint="#3F51B5"
+        android:minHeight="48dp"
+        android:onClick="onDeleteTerm"
+        app:layout_constraintBottom_toBottomOf="@+id/assessmentListEndDateTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/assessmentListNameTextView" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

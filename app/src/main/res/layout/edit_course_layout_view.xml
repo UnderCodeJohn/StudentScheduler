@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/editAssessmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".controller.CourseDetailViewController">
+
+        <TextView
+            android:id="@+id/textViewEditCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/edit_course"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/editCourseStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/start_date"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/editStartDateButton"
+            app:layout_constraintStart_toEndOf="@+id/editStartDateButton"
+            app:layout_constraintTop_toTopOf="@+id/editStartDateButton" />
+
+        <TextView
+            android:id="@+id/editCourseEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/end_date"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/editEndDateButton"
+            app:layout_constraintStart_toEndOf="@+id/editEndDateButton"
+            app:layout_constraintTop_toTopOf="@+id/editEndDateButton" />
+
+        <TextView
+            android:id="@+id/editCourseStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/course_status"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/editEndDateButton"
+            app:layout_constraintTop_toBottomOf="@+id/editEndDateButton" />
+
+        <Button
+            android:id="@+id/editCourseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="onSave"
+            android:text="@string/save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editCourseStatus" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupCourseStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editHintTextView">
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/progressRB"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:text="@string/in_progress"
+                android:textAlignment="center" />
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/completedRB"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:text="@string/completed"
+                android:textAlignment="center" />
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/droppedRB"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:text="@string/dropped"
+                android:textAlignment="center" />
+
+            <RadioButton
+                android:id="@+id/planRB"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:text="@string/plan_to_take"
+                android:textAlignment="center" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/editCourseNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/course_name"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/editCourseTextEdit"
+            app:layout_constraintEnd_toStartOf="@+id/editCourseTextEdit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editCourseTextEdit" />
+
+        <EditText
+            android:id="@+id/editCourseTextEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:hint="@string/course_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editCourseNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEditCourse" />
+
+        <Button
+            android:id="@+id/editStartDateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onEditStartDate"
+            android:text="@string/select_start_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editCourseNameTextView" />
+
+        <Button
+            android:id="@+id/editEndDateButton"
+            android:layout_width="188dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:onClick="onEditEndDate"
+            android:text="@string/select_end_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editStartDateButton" />
+
+        <TextView
+            android:id="@+id/editHintTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/select_course_status"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editCourseButton" />
+
+        <CalendarView
+            android:id="@+id/calendarViewEditCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editCourseButton" />
+
+        <CheckBox
+            android:id="@+id/checkBoxEditCourseStartDateAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_alert"
+            app:layout_constraintStart_toStartOf="@+id/editCourseStartDate"
+            app:layout_constraintTop_toBottomOf="@+id/editCourseStartDate" />
+
+        <CheckBox
+            android:id="@+id/checkBoxEditCourseEndDateAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_alert"
+            app:layout_constraintStart_toStartOf="@+id/editCourseEndDate"
+            app:layout_constraintTop_toBottomOf="@+id/editCourseEndDate" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

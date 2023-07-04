@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".controller.HomeScreenController">
+
+        <TextView
+            android:id="@+id/termListTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/create_term"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/termNameEditText"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/selectStartDateButton"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="onSelectStartDate"
+            android:text="@string/select_start_date"
+            app:layout_constraintStart_toStartOf="@+id/termNameEditText"
+            app:layout_constraintTop_toBottomOf="@+id/termNameEditText" />
+
+        <Button
+            android:id="@+id/selectEndDateButton"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="onSelectEndDate"
+            android:text="@string/select_end_date"
+            app:layout_constraintStart_toStartOf="@+id/startDateTextView"
+            app:layout_constraintTop_toBottomOf="@+id/startDateTextView" />
+
+        <TextView
+            android:id="@+id/startDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/start_date"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/selectStartDateButton"
+            app:layout_constraintTop_toBottomOf="@+id/selectStartDateButton" />
+
+        <TextView
+            android:id="@+id/endDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/end_date"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/selectEndDateButton"
+            app:layout_constraintTop_toBottomOf="@+id/selectEndDateButton" />
+
+        <TextView
+            android:id="@+id/nameOfTermTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/term_name"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/termNameEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="@string/term_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/termListTextView" />
+
+        <Button
+            android:id="@+id/viewAllTermsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="onViewAllTerms"
+            android:text="@string/view_terms"
+            app:layout_constraintStart_toStartOf="@+id/endDateTextView"
+            app:layout_constraintTop_toBottomOf="@+id/endDateTextView" />
+
+        <Button
+            android:id="@+id/addTermButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="onAddTerm"
+            android:text="@string/add_term"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/viewAllTermsButton"
+            app:layout_constraintTop_toBottomOf="@+id/viewAllTermsButton" />
+
+        <CalendarView
+            android:id="@+id/termCalendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

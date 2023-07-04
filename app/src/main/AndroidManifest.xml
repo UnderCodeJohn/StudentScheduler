@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.StudentScheduler"
+        tools:targetApi="31">
+        <activity
+            android:name=".controller.InstructorListViewController"
+            android:exported="false"
+            android:parentActivityName=".controller.CourseDetailViewController"/>
+        <activity
+            android:name=".controller.InstructorDetailViewController"
+            android:exported="false"
+            android:parentActivityName=".controller.InstructorListViewController" />
+
+        <receiver
+            android:name=".Receiver.Receiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".controller.NoteDetailViewController"
+            android:exported="false"
+            android:parentActivityName=".controller.NoteListController" />
+        <activity
+            android:name=".controller.NoteListController"
+            android:exported="false"
+            android:parentActivityName=".controller.CourseDetailViewController" />
+        <activity
+            android:name=".controller.AssessmentDetailViewController"
+            android:exported="false"
+            android:parentActivityName=".controller.AssessmentListController" />
+        <activity
+            android:name=".controller.AssessmentListController"
+            android:exported="false"
+            android:parentActivityName=".controller.CourseDetailViewController" />
+        <activity
+            android:name=".controller.CourseDetailViewController"
+            android:exported="false"
+            android:parentActivityName=".controller.CourseListController" />
+        <activity
+            android:name=".controller.CourseListController"
+            android:exported="false"
+            android:parentActivityName=".controller.TermDetailViewController" />
+        <activity
+            android:name=".controller.TermDetailViewController"
+            android:exported="false"
+            android:parentActivityName=".controller.TermListController" />
+        <activity
+            android:name=".controller.TermListController"
+            android:exported="false"
+            android:parentActivityName=".controller.HomeScreenController" />
+        <activity
+            android:name=".controller.HomeScreenController"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

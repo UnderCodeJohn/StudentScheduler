@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".controller.AssessmentListController">
+
+        <TextView
+            android:id="@+id/textViewCreateAssessment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/create_assessment"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewAssessmentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/assessment"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextAssessmentName"
+            app:layout_constraintEnd_toStartOf="@+id/editTextAssessmentName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextAssessmentName" />
+
+        <EditText
+            android:id="@+id/editTextAssessmentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:hint="@string/assessment_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewAssessmentName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCreateAssessment" />
+
+        <Button
+            android:id="@+id/buttonAssessmentStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onAssessmentStartDate"
+            android:text="@string/select_start_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAssessmentName" />
+
+        <TextView
+            android:id="@+id/textViewAssessmentStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/start_date"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonAssessmentStartDate"
+            app:layout_constraintStart_toEndOf="@+id/buttonAssessmentStartDate"
+            app:layout_constraintTop_toTopOf="@+id/buttonAssessmentStartDate" />
+
+        <Button
+            android:id="@+id/buttonAssessmentEndDate"
+            android:layout_width="190dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:onClick="onAssessmentEndDate"
+            android:text="@string/select_end_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAssessmentStartDate" />
+
+        <TextView
+            android:id="@+id/textViewAssessmentEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/end_date"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonAssessmentEndDate"
+            app:layout_constraintStart_toEndOf="@+id/buttonAssessmentEndDate"
+            app:layout_constraintTop_toTopOf="@+id/buttonAssessmentEndDate" />
+
+        <Button
+            android:id="@+id/buttonAddAssessment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="onAddAssessment"
+            android:text="@string/add_assessment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAssessmentEndDate" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/assessmentRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAddAssessment" />
+
+        <CalendarView
+            android:id="@+id/calendarViewAssessment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAddAssessment" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".controller.TermDetailViewController">
+
+        <TextView
+            android:id="@+id/termDetailNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/term_name"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/termDetailStartDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/start_date"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/termDetailEndDateTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/termDetailNameTextView" />
+
+        <TextView
+            android:id="@+id/termDetailEndDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/end_date"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/termDetailStartDateTextView"
+            app:layout_constraintTop_toTopOf="@+id/termDetailStartDateTextView" />
+
+        <TextView
+            android:id="@+id/termDetailNumberOfCoursesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/number_of_courses"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/termDetailStartDateTextView" />
+
+        <Button
+            android:id="@+id/termDetailViewAllCoursesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="48dp"
+            android:onClick="onViewAllCourses"
+            android:text="@string/view_all_courses"
+            app:layout_constraintEnd_toStartOf="@+id/termDetailTermButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/termDetailNumberOfCoursesTextView" />
+
+        <Button
+            android:id="@+id/termDetailTermButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:onClick="onDeleteTerm"
+            android:text="@string/delete_term"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/termDetailViewAllCoursesButton"
+            app:layout_constraintTop_toTopOf="@+id/termDetailViewAllCoursesButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
